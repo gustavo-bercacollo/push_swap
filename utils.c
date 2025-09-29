@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moves.c                                            :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 13:47:23 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/09/29 16:25:12 by gbercaco         ###   ########.fr       */
+/*   Created: 2025/09/29 15:02:20 by gbercaco          #+#    #+#             */
+/*   Updated: 2025/09/29 16:14:20 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void sa(t_piles *piles)
+t_stack *new_node(int value)
 {
-	t_stack *first;
-	t_stack *second;
-	
-	if (!piles->pile_a || !piles->pile_a->next)
-		return ;
-	
-	first = piles->pile_a;
-	second = first->next;
+	t_stack *node = malloc(sizeof(t_stack));
+	if (!node)
+		return NULL;
+	node->value = value;
+	node->next = NULL;
+	return node;
+}
 
-	first->next = second->next;
-	second->next = first;
-	piles->pile_a = second;
-	
+void print_stack(t_stack *stack)
+{
+	while (stack)
+	{
+		printf("%d -> ", stack->value);
+		stack = stack->next;
+	}
+	printf("NULL\n");
 }
