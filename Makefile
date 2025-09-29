@@ -13,9 +13,13 @@
 NAME = push_swap
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -Iinclude
 
-SRCS = main.c swap.c utils.c
+SRCS = src/main.c \
+       src/swap.c \
+       src/utils.c \
+       src/push.c
+
 OBJS = $(SRCS:.c=.o)
 
 # ------------------- Regras -------------------
@@ -25,7 +29,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.c push_swap.h
+# Compilação dos objetos
+%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
