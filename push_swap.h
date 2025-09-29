@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/29 16:36:25 by gbercaco          #+#    #+#             */
+/*   Updated: 2025/09/29 16:47:46 by gbercaco         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 #define PUSH_SWAP_H
 
@@ -16,8 +28,12 @@ typedef struct s_piles
 	t_stack *pile_b;
 }t_piles;
 
-
+// swap
 void sa(t_piles *piles);
+void sb(t_piles *piles);
+void ss(t_piles *piles);
+
+// ultils
 t_stack *new_node(int value);
 void print_stack(t_stack *stack);
 

@@ -15,7 +15,7 @@ NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = main.c moves.c utils.c
+SRCS = main.c swap.c utils.c
 OBJS = $(SRCS:.c=.o)
 
 # ------------------- Regras -------------------
