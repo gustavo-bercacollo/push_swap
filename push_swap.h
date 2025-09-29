@@ -13,4 +13,8 @@ typedef struct s_piles
 	t_stack *pile_b;
 }t_piles;
 
+
+void sa(t_piles *piles);
+
+
 #endif
