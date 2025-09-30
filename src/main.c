@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 15:02:30 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/09/29 18:54:23 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/09/30 15:42:05 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,14 @@ int main(void)
 	pile.pile_a = a1;
 	pile.pile_b = b1;
 	
-	printf("Antes do pa\n");
+	printf("Antes do ra\n");
 	print_stack(pile.pile_a);
 	print_stack(pile.pile_b);
 	
-	pa(&pile);
+	ra(&pile);
+	rb(&pile);
 	
-	printf("Depois do pa\n");
+	printf("Depois do ra\n");
 	print_stack(pile.pile_a);
 	print_stack(pile.pile_b);
 	
