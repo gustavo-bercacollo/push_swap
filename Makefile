@@ -1,45 +1,34 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                      +:+ +:+         +:+      #
-#    By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+         #
-#                                                  +#+#+#+#+#+   +#+            #
-#    Created: 2025/09/29 15:00:00 by gbercaco          #+#    #+#              #
-#    Updated: 2025/09/29 15:00:00 by gbercaco         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME = push_swap
-
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -Iinclude
+CFLAGS = -Wall -Wextra -Werror
+INCLUDES = -I include -I libft/include
+LIBS = -L libft -lft
 
-SRCS = src/main.c \
-       src/swap.c \
-       src/utils.c \
-       src/push.c \
-			 src/rotate.c
-
+SRCS = src/main.c src/swap.c src/utils.c src/push.c src/rotate.c src/reverse.c
 OBJS = $(SRCS:.c=.o)
 
-# ------------------- Regras -------------------
+all: libft $(NAME)
 
-all: $(NAME)
+# Chama o Makefile da libft
+libft:
+	$(MAKE) -C libft
 
+# Compila push_swap linkando com libft.a
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) $(INCLUDES) $(LIBS) -o $(NAME)
 
-# Compilação dos objetos
+# Regra para compilar cada .c
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
+	$(MAKE) -C libft clean
 
 fclean: clean
 	rm -f $(NAME)
+	$(MAKE) -C libft fclean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re libft
