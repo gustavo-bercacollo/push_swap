@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:36:25 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/09/30 20:31:44 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/01 14:44:42 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,6 @@ void rrb(t_piles *piles);
 // ultils
 t_stack *new_node(int value);
 void print_stack(t_stack *stack);
+void add_back(t_stack **stack, t_stack *new);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 15:02:20 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/09/29 16:56:15 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/01 15:00:42 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,24 @@ void	print_stack(t_stack *stack)
 {
 	while (stack)
 	{
-		printf("%d -> ", stack->value);
+		printf("%d\n", stack->value);
 		stack = stack->next;
 	}
-	printf("NULL\n");
+}
+
+void	add_back(t_stack **stack, t_stack *new)
+{
+	t_stack *tmp;
+	
+	if (!stack || !new)
+		return ;
+	if (!*stack)
+	{
+		*stack = new;
+		return ;
+	}
+	tmp = *stack;
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = new;
 }
