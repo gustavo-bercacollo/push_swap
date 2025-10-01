@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 15:02:20 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/01 15:00:42 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/01 16:09:34 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,23 @@ void	add_back(t_stack **stack, t_stack *new)
 	while (tmp->next)
 		tmp = tmp->next;
 	tmp->next = new;
+}
+// int	is_sorted(t_stack *stack)
+// {
+// 	t_stack *temp;
+// 	int min_value;
+	
+// 	min_value = stack;
+// 	temp = stack;
+// 	while (temp->next)
+// 	{
+// 		temp = temp->next;
+// 	}
+	
+	
+// }
+
+int is_int(int n)
+{
+	return (n >= '0' && n <= '9');
 }
