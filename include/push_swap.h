@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:36:25 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/09/30 15:41:15 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/09/30 20:31:44 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,11 @@ void pb(t_piles *piles);
 // rotate
 void ra(t_piles *piles);
 void rb(t_piles *piles);
+void rrb(t_piles *piles);
+
+// reverse
+void rra(t_piles *piles);
+void rrb(t_piles *piles);
 
 // ultils
 t_stack *new_node(int value);
