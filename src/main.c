@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 15:02:30 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/01 19:54:08 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/02 15:15:43 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,13 @@ int	main(int argc, char *argv[])
 		else
 		{
 			printf("Error\n");
+			free_stack(pile.pile_a);
 			return (1);
 		}
 	}
+	
 	print_stack(pile.pile_a);
+	free_stack(pile.pile_a);
+	free_stack(pile.pile_b);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 15:02:20 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/01 19:48:09 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/02 14:56:23 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,17 @@ int has_duplicate(char *argv[], int i)
 		if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
 			return (1);
 	return (0);
+}
+
+void	free_stack(t_stack *stack)
+{
+	t_stack *temp;
+
+	while (stack)
+	{
+		temp = stack->next;
+		free(stack);
+		stack = temp;
+	}
+	
 }

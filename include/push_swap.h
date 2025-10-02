@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:36:25 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/01 19:48:44 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/02 15:03:15 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,6 @@ void print_stack(t_stack *stack);
 void add_back(t_stack **stack, t_stack *new);
 int is_number(const char *str);
 int has_duplicate(char *argv[], int i);
+void free_stack(t_stack *stack);
 
 #endif
