@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 15:02:20 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/02 14:56:23 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/02 17:07:58 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,19 +49,19 @@ void	add_back(t_stack **stack, t_stack *new)
 		tmp = tmp->next;
 	tmp->next = new;
 }
-// int	is_sorted(t_stack *stack)
-// {
-// 	t_stack *temp;
-// 	int min_value;
+int	is_sorted(t_stack *stack)
+{
+	t_stack	*temp;
 
-// 	min_value = stack;
-// 	temp = stack;
-// 	while (temp->next)
-// 	{
-// 		temp = temp->next;
-// 	}
-
-// }
+	temp = stack;
+	while (temp->next)
+	{
+		if (temp->value > temp->next->value)
+			return (0);
+		temp = temp->next;
+	}
+	return (1);
+}
 
 int	is_number(const char *str)
 {
@@ -78,9 +78,9 @@ int	is_number(const char *str)
 	return (1);
 }
 
-int has_duplicate(char *argv[], int i)
+int	has_duplicate(char *argv[], int i)
 {
-	int j;
+	int	j;
 
 	j = 0;
 	while (++j < i)
@@ -99,5 +99,4 @@ void	free_stack(t_stack *stack)
 		free(stack);
 		stack = temp;
 	}
-	
 }
