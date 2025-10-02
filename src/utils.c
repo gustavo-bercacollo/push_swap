@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 15:02:20 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/02 17:07:58 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/02 19:33:12 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,11 @@ int	is_sorted(t_stack *stack)
 
 int	is_number(const char *str)
 {
+	long	n;
+
+	n = ft_atol(str);
+	if (n > 2147483647 || n < -2147483648)
+		return (0);
 	if (*str == '+' || *str == '-')
 		str++;
 	if (!*str)
@@ -91,7 +96,7 @@ int	has_duplicate(char *argv[], int i)
 
 void	free_stack(t_stack *stack)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	while (stack)
 	{

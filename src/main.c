@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 15:02:30 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/02 17:08:47 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/02 19:23:46 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,13 @@ int	main(int argc, char *argv[])
 	
 	for (int i = 1; i < argc; i++)
 	{
-		if (is_number(argv[i]) && !has_duplicate(argv, i))
-			add_back(&pile.pile_a, new_node(ft_atoi(argv[i])));
-		else
+		if (!is_number(argv[i]) || has_duplicate(argv, i))
 		{
 			printf("Error\n");
 			free_stack(pile.pile_a);
 			return (1);
 		}
+		add_back(&pile.pile_a, new_node(ft_atoi(argv[i])));
 	}
 	print_stack(pile.pile_a);
 	free_stack(pile.pile_a);

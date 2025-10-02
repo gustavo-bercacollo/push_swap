@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:36:25 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/02 15:03:15 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/02 18:48:56 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include "ft_ctype.h"
 # include "ft_stdlib.h"
+# include "ft_non_standard/ft_non_standard.h"
 
 typedef struct s_stack
 {
