@@ -6,23 +6,11 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 15:02:20 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/02 19:33:12 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/02 20:14:38 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-t_stack	*new_node(int value)
-{
-	t_stack	*node;
-
-	node = malloc(sizeof(t_stack));
-	if (!node)
-		return (NULL);
-	node->value = value;
-	node->next = NULL;
-	return (node);
-}
 
 void	print_stack(t_stack *stack)
 {
@@ -33,22 +21,6 @@ void	print_stack(t_stack *stack)
 	}
 }
 
-void	add_back(t_stack **stack, t_stack *new)
-{
-	t_stack	*tmp;
-
-	if (!stack || !new)
-		return ;
-	if (!*stack)
-	{
-		*stack = new;
-		return ;
-	}
-	tmp = *stack;
-	while (tmp->next)
-		tmp = tmp->next;
-	tmp->next = new;
-}
 int	is_sorted(t_stack *stack)
 {
 	t_stack	*temp;
@@ -92,16 +64,4 @@ int	has_duplicate(char *argv[], int i)
 		if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
 			return (1);
 	return (0);
-}
-
-void	free_stack(t_stack *stack)
-{
-	t_stack	*temp;
-
-	while (stack)
-	{
-		temp = stack->next;
-		free(stack);
-		stack = temp;
-	}
 }
