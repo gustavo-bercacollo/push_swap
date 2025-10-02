@@ -4,7 +4,14 @@ CFLAGS = -Wall -Wextra -Werror
 INCLUDES = -I include -I libft/include
 LIBS = -L libft -lft
 
-SRCS = src/main.c src/swap.c src/utils.c src/push.c src/rotate.c src/reverse.c
+SRCS =	src/main.c \
+	src/swap.c \
+	src/utils.c \
+	src/push.c \
+	src/rotate.c \
+	src/reverse.c \
+	src/stack.c
+	
 OBJS = $(SRCS:.c=.o)
 
 all: libft $(NAME)
