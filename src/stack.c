@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 20:13:15 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/02 20:14:47 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/03 00:02:19 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,14 @@ void	free_stack(t_stack *stack)
 		temp = stack->next;
 		free(stack);
 		stack = temp;
+	}
+}
+
+void	print_stack(t_stack *stack)
+{
+	while (stack)
+	{
+		printf("%d\n", stack->value);
+		stack = stack->next;
 	}
 }

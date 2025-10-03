@@ -6,20 +6,11 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 15:02:20 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/02 20:14:38 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/03 00:02:12 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	print_stack(t_stack *stack)
-{
-	while (stack)
-	{
-		printf("%d\n", stack->value);
-		stack = stack->next;
-	}
-}
 
 int	is_sorted(t_stack *stack)
 {
