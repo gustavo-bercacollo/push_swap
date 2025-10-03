@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:40:37 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/09/30 17:31:25 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/03 03:59:04 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	sa(t_piles *piles)
 	first->next = second->next;
 	second->next = first;
 	piles->pile_a = second;
+	write(1, "sa\n", 3);
 }
 
 void	sb(t_piles *piles)
@@ -38,13 +39,14 @@ void	sb(t_piles *piles)
 	first->next = second->next;
 	second->next = first;
 	piles->pile_b = second;
+	write(1, "sb\n", 3);
 }
 
 void	ss(t_piles *piles)
 {
-	t_stack *first;
-	t_stack *second;
-	
+	t_stack	*first;
+	t_stack	*second;
+
 	if (piles->pile_a && piles->pile_a->next)
 	{
 		first = piles->pile_a;
@@ -61,4 +63,5 @@ void	ss(t_piles *piles)
 		second->next = first;
 		piles->pile_b = second;
 	}
+	write(1, "ss\n", 3);
 }

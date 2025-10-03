@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 00:49:32 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/03 03:32:55 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/03 03:59:35 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,3 +17,8 @@ void	sort_two(t_piles *piles)
 	if (piles->pile_a->value > piles->pile_a->next->value)
 		sa(piles);
 }
+
+// void	sort_tree(t_piles *piles)
+// {
+
+// }

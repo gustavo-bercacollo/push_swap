@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 15:02:30 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/02 20:40:30 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/03 03:50:30 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,22 @@ static int	validade_and_build_stack(int argc, char *argv[], t_piles *pile)
 int	main(int argc, char *argv[])
 {
 	t_piles	pile;
+	int qtd;
 
+	qtd = argc - 1;
+	
 	if (argc < 2)
 		return (0);
+		
 	pile.pile_a = NULL;
 	pile.pile_b = NULL;
+	
 	if (!validade_and_build_stack(argc, argv, &pile))
 		return (1);
+	
+	if (!is_sorted(pile.pile_a) && qtd == 2)
+		sort_two(&pile);
+	
 	print_stack(pile.pile_a);
 	free_stack(pile.pile_a);
 	free_stack(pile.pile_b);

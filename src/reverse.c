@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 17:32:40 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/01 13:54:28 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/03 03:57:58 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	rra(t_piles *piles)
 	last->next->next = piles->pile_a;
 	piles->pile_a = last->next;
 	last->next = NULL;
+	write(1, "rra\n", 4);
 }
 
 void	rrb(t_piles *piles)
@@ -38,6 +39,7 @@ void	rrb(t_piles *piles)
 	last->next->next = piles->pile_b;
 	piles->pile_b = last->next;
 	last->next = NULL;
+	write(1, "rrb\n", 4);
 }
 
 void	rrr(t_piles *piles)
@@ -62,4 +64,5 @@ void	rrr(t_piles *piles)
 		piles->pile_b = last->next;
 		last->next = NULL;
 	}
+	write(1, "rrr\n", 4);
 }

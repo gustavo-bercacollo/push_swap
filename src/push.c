@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 17:02:29 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/09/29 18:52:54 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/03 03:57:13 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	pa(t_piles *piles)
 {
-	t_stack *first_b;
+	t_stack	*first_b;
 
 	if (!piles->pile_b)
 		return ;
@@ -22,6 +22,7 @@ void	pa(t_piles *piles)
 	piles->pile_b = first_b->next;
 	first_b->next = piles->pile_a;
 	piles->pile_a = first_b;
+	write(1, "pa\n", 3);
 }
 
 void	pb(t_piles *piles)
@@ -34,4 +35,5 @@ void	pb(t_piles *piles)
 	piles->pile_a = first_a->next;
 	first_a->next = piles->pile_b;
 	piles->pile_b = first_a;
+	write(1, "pb\n", 3);
 }
