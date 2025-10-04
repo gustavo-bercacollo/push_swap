@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:36:25 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/03 03:51:59 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/04 18:15:52 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void rrb(t_piles *piles);
 
 // sort small
 void sort_two(t_piles *piles);
+void sort_three(t_piles *piles);
 
 // stack
 t_stack *new_node(int value);
