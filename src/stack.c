@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 20:13:15 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/03 00:02:19 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/06 16:50:26 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_stack	*new_node(int value)
 	if (!node)
 		return (NULL);
 	node->value = value;
+	node->index = 0;
 	node->next = NULL;
 	return (node);
 }
@@ -61,3 +62,7 @@ void	print_stack(t_stack *stack)
 		stack = stack->next;
 	}
 }
+// int stack_size()
+// {
+	
+// }
