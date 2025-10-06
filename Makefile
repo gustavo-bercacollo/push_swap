@@ -11,6 +11,7 @@ SRCS =	src/main.c \
 	src/rotate.c \
 	src/reverse.c \
 	src/sort_small.c \
+	src/radix_sort.c \
 	src/stack.c
 	
 OBJS = $(SRCS:.c=.o)

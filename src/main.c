@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 15:02:30 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/04 18:16:42 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/06 17:56:55 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int	main(int argc, char *argv[])
 	int qtd;
 
 	qtd = argc - 1;
-	
 	if (argc < 2)
 		return (0);
 		
@@ -44,13 +43,15 @@ int	main(int argc, char *argv[])
 	
 	if (!validade_and_build_stack(argc, argv, &pile))
 		return (1);
-	
+	set_indices(&pile);
 	if (!is_sorted(pile.pile_a) && qtd == 2)
 		sort_two(&pile);
 	else if (!is_sorted(pile.pile_a) && qtd == 3)
 		sort_three(&pile);
-	
-	
+	else if (!is_sorted(pile.pile_a) && qtd > 3)
+		radix(&pile);
+		
+		
 	print_stack(pile.pile_a);
 	free_stack(pile.pile_a);
 	free_stack(pile.pile_b);

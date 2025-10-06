@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 20:13:15 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/06 16:50:26 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/06 16:53:52 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,17 @@ void	print_stack(t_stack *stack)
 		stack = stack->next;
 	}
 }
-// int stack_size()
-// {
+int stack_size(t_piles *piles)
+{
+	t_stack *tmp;
+	int size;
 	
-// }
+	size = 0;
+	tmp = piles->pile_a;
+	while (tmp)
+	{
+		size++;
+		tmp = tmp->next;
+	}
+	return size;
+}

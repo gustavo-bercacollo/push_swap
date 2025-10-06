@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 15:02:20 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/03 00:02:12 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/06 17:55:57 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,26 @@ int	has_duplicate(char *argv[], int i)
 		if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
 			return (1);
 	return (0);
+}
+
+void  set_indices(t_piles *piles)
+{ 
+	t_stack *tmp1;
+	t_stack *tmp2;
+	int i;
+
+	tmp1 = piles->pile_a;
+	while (tmp1)
+	{
+		i = 0;
+		tmp2 = piles->pile_a;
+		while (tmp2)
+		{
+			if (tmp1->value > tmp2->value)
+				i++;
+			tmp2 = tmp2->next;	
+		}
+		tmp1->index = i;
+		tmp1 = tmp1->next;
+	}	
 }
