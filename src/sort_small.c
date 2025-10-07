@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 00:49:32 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/07 14:37:35 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/07 15:06:34 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ void	sort_five(t_piles *piles)
 {
 	push_index_to_b(piles, 0);
 	push_index_to_b(piles, 1);
-	sort_four(piles);
+	sort_three(piles);
 	pa(piles);
 	pa(piles);
 }

@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 15:02:20 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/06 17:55:57 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/07 15:19:45 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,8 @@ void  set_indices(t_piles *piles)
 	t_stack *tmp1;
 	t_stack *tmp2;
 	int i;
-
+	if (!piles->pile_a)
+    return ;
 	tmp1 = piles->pile_a;
 	while (tmp1)
 	{
