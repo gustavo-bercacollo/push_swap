@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 00:49:32 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/04 18:17:23 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/07 14:37:35 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,68 @@ void	sort_three(t_piles *piles)
 		sa(piles);
 		rra(piles);
 	}
+}
+
+void	sort_four(t_piles *piles)
+{
+	t_stack *tmp;
+	int pos;
+	
+	pos = 0;
+	tmp = piles->pile_a;
+	while (tmp && tmp->index != 0)
+	{
+		pos++;
+		tmp = tmp->next;
+	}
+	
+	if (pos == 1)
+		ra(piles);
+	else if (pos == 2)
+	{
+		ra(piles);
+		ra(piles);
+	}
+	else if (pos == 3)
+		rra(piles);
+	pb(piles);
+	sort_three(piles);
+	pa(piles);
+}
+static void	push_index_to_b(t_piles *piles, int target_index)
+{
+	t_stack	*tmp;
+	int		pos;
+
+	pos = 0;
+	tmp = piles->pile_a;
+	while (tmp && tmp->index != target_index)
+	{
+		pos++;
+		tmp = tmp->next;
+	}
+	if (pos == 1)
+		ra(piles);
+	else if (pos == 2)
+	{
+		ra(piles);
+		ra(piles);
+	}
+	else if (pos == 3)
+	{
+		rra(piles);
+		rra(piles);
+	}
+	else if (pos == 4)
+		rra(piles);
+	pb(piles);
+}
+
+void	sort_five(t_piles *piles)
+{
+	push_index_to_b(piles, 0);
+	push_index_to_b(piles, 1);
+	sort_four(piles);
+	pa(piles);
+	pa(piles);
 }

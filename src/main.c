@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 15:02:30 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/06 17:56:55 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/07 14:41:45 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,12 @@ int	main(int argc, char *argv[])
 		sort_two(&pile);
 	else if (!is_sorted(pile.pile_a) && qtd == 3)
 		sort_three(&pile);
-	else if (!is_sorted(pile.pile_a) && qtd > 3)
-		radix(&pile);
-		
+	else if (!is_sorted(pile.pile_a) && qtd == 4)
+		sort_four(&pile);
+	else if (!is_sorted(pile.pile_a) && qtd == 4)
+		sort_five(&pile);
+	else
+		radix(&pile);	
 		
 	print_stack(pile.pile_a);
 	free_stack(pile.pile_a);
