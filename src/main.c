@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 15:02:30 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/07 15:22:18 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/07 23:42:07 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,20 @@ static int	validade_and_build_stack(int argc, char *argv[], t_piles *pile)
 	}
 	return (1);
 }
+
+static void handle_sort(t_piles *pile, int qtd)
+{
+	if (!is_sorted(pile->pile_a) && qtd == 2)
+		sort_two(pile);
+	else if (!is_sorted(pile->pile_a) && qtd == 3)
+		sort_three(pile);
+	else if (!is_sorted(pile->pile_a) && qtd == 4)
+		sort_four(pile);
+	else if (!is_sorted(pile->pile_a) && qtd == 5)
+		sort_five(pile);
+	else if (!is_sorted(pile->pile_a) && qtd > 5)
+		radix(pile);	
+}
 int	main(int argc, char *argv[])
 {
 	t_piles	pile;
@@ -44,18 +58,9 @@ int	main(int argc, char *argv[])
 	if (!validade_and_build_stack(argc, argv, &pile))
 		return (1);
 	set_indices(&pile);
-	if (!is_sorted(pile.pile_a) && qtd == 2)
-		sort_two(&pile);
-	else if (!is_sorted(pile.pile_a) && qtd == 3)
-		sort_three(&pile);
-	else if (!is_sorted(pile.pile_a) && qtd == 4)
-		sort_four(&pile);
-	else if (!is_sorted(pile.pile_a) && qtd == 5)
-		sort_five(&pile);
-	else if (!is_sorted(pile.pile_a) && qtd > 5)
-		radix(&pile);	
+	
+	handle_sort(&pile, qtd);
 		
-	print_stack(pile.pile_a);
 	free_stack(pile.pile_a);
 	free_stack(pile.pile_b);
 	return (0);

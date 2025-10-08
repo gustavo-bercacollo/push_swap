@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 00:05:29 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/06 23:41:58 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/07 20:16:59 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,26 +40,24 @@ static int get_max_bits(int max_index)
 
 void	radix(t_piles *piles)
 {
-	int max_index;
-	int max_bits;
-	int i;
-	int size;
-	int j;
-	
-	max_index = get_max_indice(piles);
-	max_bits = get_max_bits(max_index);
+	int	max_bits;
+	int	size;
+	int	i;
 
+	size = stack_size(piles);
+	max_bits = get_max_bits(get_max_indice(piles));
 	i = 0;
+
 	while (i < max_bits)
 	{
-		size = stack_size(piles); 
-		j = 0;
+		int j = 0;
 		while (j < size)
 		{
-			if (((piles->pile_a->index >> i) & 1) == 0)
+			int num = piles->pile_a->index;
+			if (((num >> i) & 1) == 0)
 				pb(piles);
 			else
-				ra(piles); 
+				ra(piles);
 			j++;
 		}
 		while (piles->pile_b)
@@ -67,3 +65,4 @@ void	radix(t_piles *piles)
 		i++;
 	}
 }
+
