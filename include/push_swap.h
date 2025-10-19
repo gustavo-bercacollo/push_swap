@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:36:25 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/07 15:19:21 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/18 21:21:16 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,6 @@ void radix(t_piles *piles);
 int is_number(const char *str);
 int has_duplicate(char *argv[], int i);
 int is_sorted(t_stack *stack);
-void  set_indices(t_piles *piles);
+void set_indices(t_piles *piles);
 
 #endif
