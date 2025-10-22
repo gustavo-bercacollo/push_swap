@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 15:02:30 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/07 23:42:07 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/22 15:56:18 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	validade_and_build_stack(int argc, char *argv[], t_piles *pile)
 	return (1);
 }
 
-static void handle_sort(t_piles *pile, int qtd)
+static void	handle_sort(t_piles *pile, int qtd)
 {
 	if (!is_sorted(pile->pile_a) && qtd == 2)
 		sort_two(pile);
@@ -41,26 +41,23 @@ static void handle_sort(t_piles *pile, int qtd)
 	else if (!is_sorted(pile->pile_a) && qtd == 5)
 		sort_five(pile);
 	else if (!is_sorted(pile->pile_a) && qtd > 5)
-		radix(pile);	
+		radix(pile);
 }
+
 int	main(int argc, char *argv[])
 {
 	t_piles	pile;
-	int qtd;
+	int		qtd;
 
 	qtd = argc - 1;
 	if (argc < 2)
 		return (0);
-		
 	pile.pile_a = NULL;
 	pile.pile_b = NULL;
-	
 	if (!validade_and_build_stack(argc, argv, &pile))
 		return (1);
 	set_indices(&pile);
-	
 	handle_sort(&pile, qtd);
-		
 	free_stack(pile.pile_a);
 	free_stack(pile.pile_b);
 	return (0);

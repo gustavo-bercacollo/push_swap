@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 00:05:29 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/07 20:16:59 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/22 15:55:45 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static int	get_max_indice(t_piles *piles)
 {
-	t_stack *tmp;
-	int max_index;
-	
+	t_stack	*tmp;
+	int		max_index;
+
 	tmp = piles->pile_a;
 	max_index = piles->pile_a->index;
 	while (tmp)
@@ -25,17 +25,17 @@ static int	get_max_indice(t_piles *piles)
 			max_index = tmp->index;
 		tmp = tmp->next;
 	}
-	return max_index;
+	return (max_index);
 }
 
-static int get_max_bits(int max_index)
+static int	get_max_bits(int max_index)
 {
-	int bits;
+	int	bits;
 
 	bits = 0;
 	while ((max_index >> bits) != 0)
 		bits++;
-	return bits;
+	return (bits);
 }
 
 void	radix(t_piles *piles)
@@ -43,17 +43,18 @@ void	radix(t_piles *piles)
 	int	max_bits;
 	int	size;
 	int	i;
+	int	j;
+	int	num;
 
 	size = stack_size(piles);
 	max_bits = get_max_bits(get_max_indice(piles));
 	i = 0;
-
 	while (i < max_bits)
 	{
-		int j = 0;
+		j = 0;
 		while (j < size)
 		{
-			int num = piles->pile_a->index;
+			num = piles->pile_a->index;
 			if (((num >> i) & 1) == 0)
 				pb(piles);
 			else
@@ -65,4 +66,3 @@ void	radix(t_piles *piles)
 		i++;
 	}
 }
-

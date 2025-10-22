@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 17:02:29 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/03 03:57:13 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/22 15:59:31 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	pa(t_piles *piles)
 
 void	pb(t_piles *piles)
 {
-	t_stack *first_a;
+	t_stack	*first_a;
 
 	if (!piles->pile_a)
 		return ;

@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 20:13:15 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/06 16:53:52 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/22 15:59:14 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	add_back(t_stack **stack, t_stack *new)
 
 void	free_stack(t_stack *stack)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	while (stack)
 	{
@@ -62,11 +62,12 @@ void	print_stack(t_stack *stack)
 		stack = stack->next;
 	}
 }
-int stack_size(t_piles *piles)
+
+int	stack_size(t_piles *piles)
 {
-	t_stack *tmp;
-	int size;
-	
+	t_stack	*tmp;
+	int		size;
+
 	size = 0;
 	tmp = piles->pile_a;
 	while (tmp)
@@ -74,5 +75,5 @@ int stack_size(t_piles *piles)
 		size++;
 		tmp = tmp->next;
 	}
-	return size;
+	return (size);
 }

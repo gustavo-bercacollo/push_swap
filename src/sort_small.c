@@ -6,7 +6,7 @@
 /*   By: gbercaco <gbercaco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 00:49:32 by gbercaco          #+#    #+#             */
-/*   Updated: 2025/10/07 15:06:34 by gbercaco         ###   ########.fr       */
+/*   Updated: 2025/10/22 15:56:15 by gbercaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,13 @@ void	sort_two(t_piles *piles)
 
 void	sort_three(t_piles *piles)
 {
-	int a;
-	int b;
-	int c;
-	
+	int	a;
+	int	b;
+	int	c;
+
 	a = piles->pile_a->value;
 	b = piles->pile_a->next->value;
 	c = piles->pile_a->next->next->value;
-
 	if (a < b && b > c && a < c)
 	{
 		sa(piles);
@@ -48,9 +47,9 @@ void	sort_three(t_piles *piles)
 
 void	sort_four(t_piles *piles)
 {
-	t_stack *tmp;
-	int pos;
-	
+	t_stack	*tmp;
+	int		pos;
+
 	pos = 0;
 	tmp = piles->pile_a;
 	while (tmp && tmp->index != 0)
@@ -58,7 +57,6 @@ void	sort_four(t_piles *piles)
 		pos++;
 		tmp = tmp->next;
 	}
-	
 	if (pos == 1)
 		ra(piles);
 	else if (pos == 2)
@@ -72,6 +70,7 @@ void	sort_four(t_piles *piles)
 	sort_three(piles);
 	pa(piles);
 }
+
 static void	push_index_to_b(t_piles *piles, int target_index)
 {
 	t_stack	*tmp;
